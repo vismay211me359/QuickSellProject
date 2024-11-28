@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const savedSort = localStorage.getItem('sortBy');
+
 const initialState = {
-    sortBy:"Priority",
+    sortBy: savedSort || "Priority",
 };
 
 
@@ -10,7 +12,8 @@ const gridSlice = createSlice({
     initialState,
     reducers: {
         setSort:(state,action)=>{
-            state.sortBy=action.payload;
+            state.sortBy = action.payload;
+            localStorage.setItem('sortBy', action.payload);
         },
     },
 });

@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const savedGrouping = localStorage.getItem('grouping');
+
 const initialState = {
-    grouping:"Status",
+    grouping: savedGrouping || "Status",
 };
 
 
@@ -10,7 +12,8 @@ const gridSlice = createSlice({
     initialState,
     reducers: {
         setGrouping:(state,action)=>{
-            state.grouping=action.payload;
+            state.grouping = action.payload;
+            localStorage.setItem('grouping', action.payload);
         },
     },
 });

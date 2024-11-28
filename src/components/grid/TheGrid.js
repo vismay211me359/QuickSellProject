@@ -48,7 +48,7 @@ const TheGrid = () => {
         <div className="grid-container">
             {(!loading && !error) && resultitems.map((item, index) => (
                 <div key={index} className="grid-item">
-                    <CardHeader index={index} users={data.users}/>
+                    <CardHeader index={index} users={data.users} count={item.length}/>
                     {(item!==undefined)  && item.map((dataObject, index) => (
                         <div key={index} className="grid-grid-item">
                             <TheCard data={dataObject} users={data.users}/>

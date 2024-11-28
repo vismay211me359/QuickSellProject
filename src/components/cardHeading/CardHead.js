@@ -17,7 +17,7 @@ import highPriority from "../../assets/images/icons/Img-High_Priority.svg";
 import urgent from "../../assets/images/icons/SVG-Urgent_Priority_colour.svg";
 import usersPhoto from "../../assets/images/ProfilePic/profilePhoto.webp"
 
-const CardHeader = ({ index,users }) => {
+const CardHeader = ({ index,users,count }) => {
   const grouping = useSelector((state) => state.grouping.grouping);
   const result=findNameIcon(grouping,index,users);
   const images={
@@ -39,7 +39,7 @@ const CardHeader = ({ index,users }) => {
       <div className="card-header-left">
         <img src={address} alt={`${result.name} Icon`} className="icon" />
         <span className="name">{result.name}</span>
-        <span className="count">{0}</span>
+        <span className="count">{count}</span>
       </div>
       <div className="card-header-right">
         <img src={plusIcon} alt="Add" className="add-button" />
