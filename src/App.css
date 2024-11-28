@@ -1,0 +1,17 @@
+/* App container for the entire page */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+}
+
+/* Navbar styling */
+.navbar {
+    flex: 0 0 auto; 
+}
+
+/* Content container styling */
+.content-container {
+    flex: 1; 
+    overflow-y: auto; 
+}
